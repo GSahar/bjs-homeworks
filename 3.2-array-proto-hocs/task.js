@@ -12,7 +12,7 @@ function sum(...args) {
 }
 
 function compareArrays(a, b) {
-    return a.every((a, i) => a === b[i]);
+    return a.every((a, i, arr) => (b.length === arr.length) ? a === b[i] : false);
 }
 
 function memorize(fn, limit) {
@@ -33,8 +33,7 @@ function memorize(fn, limit) {
 
             return resultArr;
         }
-        else {
-            return objArr.result;
-        }
+        return objArr.result;
+
     };
 }
